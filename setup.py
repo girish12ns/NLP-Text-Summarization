@@ -4,8 +4,8 @@ with open('README.md','r',encoding='utf-8') as f:
     long_description=f.read()
 
 __version__="0.0.0"
-REPO_NAME="NLP-Text-Summarization"
-SRC_REPO="NLP-PROJECT"
+REPO_NAME="NLP_Text_Summarization"
+SRC_REPO="NLP_PROJECT"
 AUTHOR_USER_NAME="girish12ns"
 AUTHOR_EMAIL:"girish12n@gmail.com"
 

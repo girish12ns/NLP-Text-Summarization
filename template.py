@@ -4,7 +4,7 @@ from pathlib import Path
 
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
 
-project_name="NLP-project"
+project_name="NLP_project"
 
 file_name_list=[
     "github/workflows/.gitkeep",
@@ -15,6 +15,7 @@ file_name_list=[
     "src/{}/config/configuration".format(project_name),
     "src/{}/Pipeline/__init__.py".format(project_name),
     "src/{}/entity/__init__.py".format(project_name),
+    "src/{}/utils/common.py".format(project_name),
     "src/{}/constants/__init__.py".format(project_name),
     "config/config.yaml",
     "dvc.yaml",
