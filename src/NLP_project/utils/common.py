@@ -124,14 +124,17 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
 
+import shutil
+from pathlib import Path
 
-def decodeImage(imgstring, fileName):
-    imgdata = base64.b64decode(imgstring)
-    with open(fileName, 'wb') as f:
-        f.write(imgdata)
-        f.close()
+from pathlib import Path
+import shutil
 
-
-def encodeImageIntoBase64(croppedImagePath):
-    with open(croppedImagePath, "rb") as f:
-        return base64.b64encode(f.read())
+def copy_file(source_path: Path, destination_path: Path) -> None:
+    try:
+        shutil.move(source_path, destination_path)
+        print(f"File copied from {source_path} to {destination_path} without data corruption.")
+    except FileNotFoundError:
+        print(f"File not found: {source_path}")
+    except Exception as e:
+        print(f"An error occurred: {e}")

@@ -1,0 +1,6 @@
+Artifacts : artifacts
+
+Data_ingestion :
+  root_dir : artifacts/data_ingestion
+  source_dir : Data book\Summerizing_data
+  data_dir : artifacts/data_ingestion/Summarizer_data
