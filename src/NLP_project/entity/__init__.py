@@ -12,3 +12,10 @@ class DataValidationConfig:
     root_dir:Path
     STATUS_FILE :str
     ALL_REQUIRES_FILES  :list
+
+
+@dataclass(frozen=True)
+class Data_transformationCofig:
+    root_dir  : Path
+    data_path : Path
+    tokiner_name : Path

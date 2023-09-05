@@ -1,7 +1,7 @@
 from src.NLP_project.utils.common import create_directories,read_yaml
 from src.NLP_project.constants import *
 from src.NLP_project.entity import DataIngestionConfig
-from src.NLP_project.entity import DataValidationConfig
+from src.NLP_project.entity import DataValidationConfig,Data_transformationCofig
 
 
 class Configuration:
@@ -34,3 +34,14 @@ class Configuration:
             ALL_REQUIRES_FILES=validation.ALL_REQUIRES_FILES
         )
         return data_validation
+    
+    def get_data_transformation(self)->Data_transformationCofig:
+        transformation=self.config.Data_transformation
+
+        create_directories([transformation.root_dir])
+
+        transformation=Data_transformationCofig(
+            root_dir=transformation.root_dir,
+            data_path=transformation.data_path,
+            tokiner_name=transformation.tokiner_name)
+        return transformation
