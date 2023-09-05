@@ -1,6 +1,7 @@
 from src.NLP_project.utils.common import create_directories,read_yaml
 from src.NLP_project.constants import *
 from src.NLP_project.entity import DataIngestionConfig
+from src.NLP_project.entity import DataValidationConfig
 
 
 class Configuration:
@@ -21,3 +22,15 @@ class Configuration:
             data_dir=ingestion.data_dir)
         
         return data_ingestion
+    
+    def data_validation_done_config(self)->DataValidationConfig:
+        validation=self.config.Data_validataion
+
+        create_directories([validation.root_dir])
+
+        data_validation=DataValidationConfig(
+            root_dir=validation.root_dir,
+            STATUS_FILE=validation.STATUS_FILE,
+            ALL_REQUIRES_FILES=validation.ALL_REQUIRES_FILES
+        )
+        return data_validation

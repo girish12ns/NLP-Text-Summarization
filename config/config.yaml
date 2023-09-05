@@ -4,3 +4,8 @@ Data_ingestion :
   root_dir : artifacts/data_ingestion
   source_dir : Data book\Summerizing_data
   data_dir : artifacts/data_ingestion/Summarizer_data
+
+Data_validataion :
+  root_dir : artifacts/data_validation
+  STATUS_FILE : artifacts/data_validation/status.txt
+  ALL_REQUIRES_FILES : [test,train,validation]
